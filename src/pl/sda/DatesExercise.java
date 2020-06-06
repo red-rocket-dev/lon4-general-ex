@@ -113,6 +113,13 @@ public class DatesExercise {
         }
     }
 
+    //to do simple filtering
+    public static boolean scanIfAdultOtherEx(LocalDate birthDate) {
+        //yyyy-MM-dd to DateTimeFormatter.BASIC_ISO_DATE
+        long yearsBetweenDateOfBirthAndNow = birthDate.until(LocalDate.now(), ChronoUnit.YEARS);
+        return yearsBetweenDateOfBirthAndNow > 18;
+    }
+
     public static boolean scanIfAdult(String dateOfBirthString) {
         //yyyy-MM-dd to DateTimeFormatter.BASIC_ISO_DATE
         LocalDate birthDate = LocalDate.parse(dateOfBirthString, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
